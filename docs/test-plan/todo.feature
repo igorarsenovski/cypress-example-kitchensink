@@ -24,14 +24,15 @@ Feature: Todo application
     And the counter shows "2 items left"
 
   @negative @creation
-  Scenario: Do not allow an empty task to be created
-    When the user tries to add a task with an empty name
+  Scenario Outline: Do not allow creating tasks with invalid names
+    When the user tries to add a task using "<inputType>" input
     Then no task is added
 
-  @negative @creation
-  Scenario: Do not allow a task with only spaces to be created
-    When the user tries to add a task with a name containing only spaces
-    Then no task is added
+    Examples:
+      | inputType            |
+      | empty                |
+      | single whitespace    |
+      | multiple whitespace  |
 
   @smoke @completion
   Scenario: Mark an active task as completed
