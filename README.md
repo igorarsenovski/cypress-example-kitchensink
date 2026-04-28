@@ -218,3 +218,31 @@ Check out the [Contributing Guideline](./CONTRIBUTING.md).
 ## Changelog
 
 See [Releases](https://github.com/cypress-io/cypress-example-kitchensink/releases).
+
+## Playwright
+
+This project includes a Playwright test suite that covers the following functionalities:
+- Task creation
+- Task completion
+- Task editing
+- Task deletion
+- Task filtering
+- Persistence
+
+Tests are organized using the Page Object Model (POM).
+
+## Docker
+
+The project includes Docker support for running the application and Playwright tests.
+
+### Build the image
+
+```bash
+docker build -t todo-playwright-tests .
+```
+
+### Run the tests
+
+```bash
+docker run --rm todo-playwright-tests
+```
